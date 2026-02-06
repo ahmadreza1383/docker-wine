@@ -49,4 +49,13 @@ ENV LANG en_US.UTF-8
 
 COPY pulse-client.conf /root/pulse/client.conf
 COPY entrypoint.sh /usr/bin/entrypoint
+
+## Added by ahmadreza1383
+
+RUN apt install winetricks -y
+
+RUN winetricks corefonts vcrun6 comctl32
+
+## End added by ahmadreza1383
+
 ENTRYPOINT ["/usr/bin/entrypoint"]
